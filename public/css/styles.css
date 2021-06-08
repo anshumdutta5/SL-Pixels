@@ -1,0 +1,88 @@
+
+
+/* LOGIN PAGE */
+
+
+.login{
+  padding-top: 5rem;
+  padding-left: 10%;
+  color: #6d3088;
+  border-radius: 15px;
+}
+
+.login-form{
+  border-radius: 50px;
+  background-color: white;
+}
+.card{
+  border-radius: 15px;
+}
+
+
+.logo{
+  width: 130px;
+  height:60px;
+  margin-top: 20px;
+  margin-left: 5px;
+  }
+
+  .form{
+  margin-top: 5%;
+  margin-left: 15rem;
+  background-color: white;
+  color: #6d3088;
+
+  border-radius: 15px;
+}
+
+.home{
+  margin-top: 20%;
+  margin-left: 15%;
+  background-color: white;
+}
+.logo-heading{
+  color: #6d3088;
+  padding-top: 40px;
+  padding-left: 25px;
+}
+
+.logo-heading{
+  margin: 10px;
+}
+
+.logo-container{
+  margin-right: 15px;
+}
+
+.form-body{
+  background-color: #efeff0;
+  font-family: 'Roboto Regular 400 italic', sans-serif;
+
+}
+.form-input{
+  height: 50px;
+  /* width: 200px; */
+  border: none;
+  margin: 10px 15px;
+  padding-left: 20px;
+  border-radius: 8px;
+  background-color: #efeff0;
+  flex-wrap: wrap;
+}
+
+.form-data{
+  padding: 0px 20px;
+}
+
+.form-button{
+  margin-left: 20px;
+}
+
+.form-portion{
+  padding: 10px;
+  color: #6d3088;
+}
+
+.heading{
+  font-size: 20px;
+}

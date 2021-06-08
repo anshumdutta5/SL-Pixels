@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SpeEdlabs Marketing</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="form-body">
+  <div class="row logo-container">
+
+
+    <div class="col-lg-4">
+      <img src="/images/logo.png" class="logo container" alt="logo-img">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="logo-heading">SpeEdlabs Marketing</h2>
+    </div>
+  </div>
+
+
+  <div class="container form  ">
+    <form action="/form" method="post" class="form-portion" autocomplete="off">
+      <div class="form-group form-data">
+        <label for="formGroupExampleInput">Key</label>
+        <input type="text" class="form-control form-input" name="key">
+      </div>
+      <div class="form-group form-data">
+        <label for="formGroupExampleInput">Image_url</label>
+        <input type="text" class="form-control form-input" name="url">
+      </div>
+      <div class="form-group form-data">
+        <label for="formGroupExampleInput2">Meeting ID</label>
+        <input type="text" class="form-control form-input" name="id">
+      </div>
+      <div class="form-group form-data">
+        <label for="formGroupExampleInput2">Password</label>
+        <input type="text" class="form-control form-input" name="password">
+      </div>
+      <button type="submit" class="form-button btn btn-outline-dark">Submit</button>
+    </form>
+  </div>
+  <% if(flag === 0){ %>
+    <script type="text/javascript">
+      alert("Wrong Key!!");
+    </script>
+  <% } %>
+
+  <% if(url === " "){ %>
+
+  <% }else{ %>
+  <div class="container form">
+    <label class="heading"> Response </label>
+    <div class="row">
+      <div class="col">
+        <label style="padding-right:10px" class="heading">Date </label>
+        <span> <%= date %></span>
+      </div>
+      <div style="text-align:center" class="col">
+      <!-- <a href="<%= url %>" Download="img.png" target="_blank">
+        <button type="button" class=" btn btn-outline-dark">Download</button>
+      </a> -->
+        <img src="<%= url %>" alt="">
+       </div>
+    </div>
+
+  </div>
+  <% } %>
+
+
+
+
+</body>
+
+</html>
