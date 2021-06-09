@@ -1,4 +1,21 @@
+/* preview page */
 
+.preview-card{
+  margin: 2% 5% 0 5%;
+}
+
+.preview-body{
+    background-color: #efeff0;
+}
+
+.card-container{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 5%;
+  margin-right: 2%;
+  width: 90%;
+  height: 100%;
+}
 
 /* LOGIN PAGE */
 
@@ -18,17 +35,19 @@
   border-radius: 15px;
 }
 
+/* Form page and logo */
 
 .logo{
-  width: 130px;
-  height:60px;
+  width: 25%;
+  height: 52%;
   margin-top: 20px;
   margin-left: 5px;
   }
 
   .form{
   margin-top: 5%;
-  margin-left: 15rem;
+  margin-left: 12%;
+  margin-right: 3%;
   background-color: white;
   color: #6d3088;
 
@@ -42,8 +61,8 @@
 }
 .logo-heading{
   color: #6d3088;
-  padding-top: 40px;
-  padding-left: 25px;
+  padding-top: 7%;
+  padding-left: 15%;
 }
 
 .logo-heading{
@@ -51,7 +70,7 @@
 }
 
 .logo-container{
-  margin-right: 15px;
+  margin-right: 3%;
 }
 
 .form-body{
