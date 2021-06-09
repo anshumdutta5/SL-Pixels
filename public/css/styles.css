@@ -1,5 +1,11 @@
 /* preview page */
 
+
+
+.zoom:hover {
+  transform: scale(1.5);
+}
+
 .preview-card{
   margin: 2% 5% 0 5%;
 }
