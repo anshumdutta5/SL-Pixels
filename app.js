@@ -75,6 +75,13 @@ app.get("/form",verifyUser, function(req, res) {
     });
 });
 
+app.get("/logout",function(req,res){
+  res.cookie("jwt", " ", {
+    expires: new Date(Date.now() + 1),
+    httpOnly: true
+  });
+  res.redirect("/");
+})
 
 app.post("/", function(req, res) {
   var username = req.body.username;
@@ -89,7 +96,7 @@ app.post("/", function(req, res) {
         if(rows.length>0){
 
           if(rows[0].password === password){
-            console.log("User Found");
+            // console.log("User Found");
             const user_id1 = rows[0].id;
             const token = generateAccessToken({ username,user_id1 });
             res.cookie("jwt", token, {
@@ -98,11 +105,11 @@ app.post("/", function(req, res) {
             });
             res.redirect("/preview");
           }else{
-            console.log("Not found");
+            // console.log("Not found");
             res.redirect("/");
           }
         }else{
-          console.log("Not found");
+          // console.log("Not found");
           res.redirect("/");
         }
       })

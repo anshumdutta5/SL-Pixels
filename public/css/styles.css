@@ -37,6 +37,11 @@
 
 /* Form page and logo */
 
+.logout-button{
+  padding-top: 2%;
+  padding-left: 10%;
+}
+
 .logo{
   width: 25%;
   height: 52%;
