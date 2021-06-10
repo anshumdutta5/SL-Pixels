@@ -8,6 +8,10 @@ const jwt = require('jsonwebtoken');
 const md5 = require('md5');
 const cookieParser = require("cookie-parser");
 var moment = require('moment');
+const multer = require('multer');
+const upload = multer({
+  dest: 'public/uploads/'
+});
 
 require('dotenv').config();
 
@@ -54,7 +58,25 @@ app.get("/", function(req, res) {
 })
 
 app.get("/preview",verifyUser,function(req,res){
-  res.render("preview");
+  let arr = [];
+  pool.getConnection(function(err,conn){
+    if(err){
+      console.log(err);
+    }else{
+      conn.query("SELECT permitted_id FROM permission WHERE user_id=?",req.user.user_id1,function(err,rows){
+        if(err){
+          console.log(err);
+        }else{
+          rows.forEach(function(row){
+            arr.push(row.permitted_id);
+          })
+          res.render("preview",{
+            arr:arr
+          });
+        }
+      })
+    }
+  })
 })
 
 app.get("/form",verifyUser, function(req, res) {
@@ -124,18 +146,23 @@ app.post("/preview",verifyUser,function(req,res){
 })
 
 
-app.post("/form",verifyUser, function(req, res) {
+
+
+app.post("/form",verifyUser,upload.single('img'), function(req, res) {
   var key = req.body.key;
-  var url = req.body.url;
+  var url_user = req.body.url;
   var id = req.body.id;
   var pswd = req.body.password;
+  var path = req.file.path;
+  var url;
   if (key === KEY) {
     switch (preview_type) {
       case "1":
-
-       // console.log(req.user);
-
-
+      if(url_user){
+        url = url_user;
+      }else{
+        url = path;
+      }
       axios.post('https://studio.pixelixe.com/api/graphic/automation/v2', {
           template_name: "CS-Design3",
           api_key: "dd8SrZnkmnXbzcjjVu9lTUPJylA2",
@@ -215,6 +242,11 @@ app.post("/form",verifyUser, function(req, res) {
         });
         break;
         case "2":
+        if(url_user){
+          url = url_user;
+        }else{
+          url = path;
+        }
         axios.post('https://studio.pixelixe.com/api/graphic/automation/v2', {
             template_name: "CS-Design3",
             api_key: "dd8SrZnkmnXbzcjjVu9lTUPJylA2",
@@ -274,6 +306,11 @@ app.post("/form",verifyUser, function(req, res) {
           });
           break;
           case "3":
+          if(url_user){
+            url = url_user;
+          }else{
+            url = path;
+          }
           axios.post('https://studio.pixelixe.com/api/graphic/automation/v2', {
               template_name: "CS-Design3",
               api_key: "dd8SrZnkmnXbzcjjVu9lTUPJylA2",

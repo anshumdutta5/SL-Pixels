@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Speedlabs Marketing</title>
+  <title>SL Pixels</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -16,57 +16,76 @@
       <img src="/images/logo.png" class="logo container" alt="logo-img">
     </div>
     <div class="col-lg-6">
-      <h2 class="logo-heading">SpeEdlabs Marketing</h2>
+      <h2 class="logo-heading">SL Pixels</h2>
     </div>
     <div class="col-lg-2 logout-button">
       <a href="/logout"><button role="button" class=" btn btn-outline-dark">Logout</button></a>
     </div>
   </div>
   <div class=" card-body card-container row">
+    <%arr.forEach(function(a){
+  switch (a) {
+case 1:%>
+<div class="card col-lg-4 preview-card" style="width: 18rem;">
+  <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Preview 1</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form class="" action="/preview" method="post">
+      <input type="hidden" name="preview_type" value="1">
+      <button type="submit" class="btn btn-outline-dark">Get This</button>
+    </form>
+  </div>
+</div>
+<%break;
+case 2:%>
+<div class="card col-lg-4 preview-card" style="width: 18rem;">
+  <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Preview 2</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form class="" action="/preview" method="post">
+      <input type="hidden" name="preview_type" value="2">
+      <button type="submit" class="btn btn-outline-dark">Get This</button>
+    </form>
+  </div>
+</div>
+  <%break;
+  case 3:%>
+  <div class="card col-lg-4 preview-card" style="width: 18rem;">
+    <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Preview 3</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <form class="" action="/preview" method="post">
+        <input type="hidden" name="preview_type" value="3">
+        <button type="submit" class="btn btn-outline-dark">Get This</button>
+      </form>
+    </div>
+  </div>
+    <%break;
+    case 4:%>
     <div class="card col-lg-4 preview-card" style="width: 18rem;">
       <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Preview 1</h5>
+        <h5 class="card-title">Preview 4</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <form class="" action="/preview" method="post">
-          <input type="hidden" name="preview_type" value="1">
+          <input type="hidden" name="preview_type" value="4">
           <button type="submit" class="btn btn-outline-dark">Get This</button>
         </form>
       </div>
     </div>
-    <div class="card col-lg-4 preview-card" style="width: 18rem;">
-      <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Preview 2</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <form class="" action="/preview" method="post">
-          <input type="hidden" name="preview_type" value="2">
-          <button type="submit" class="btn btn-outline-dark">Get This</button>
-        </form>
-      </div>
-    </div>
-    <div class="card col-lg-4 preview-card" style="width: 18rem;">
-      <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Preview 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <form class="" action="/preview" method="post">
-          <input type="hidden" name="preview_type" value="3">
-          <button type="submit" class="btn btn-outline-dark">Get This</button>
-        </form>
-      </div>
-    </div>
-    <div class="card col-lg-4 preview-card" style="width: 18rem;">
-      <img class="zoom card-img-top" src="images/preview1.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Preview 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <form class="" action="/preview" method="post">
-          <input type="hidden" name="preview_type" value="3">
-          <button type="submit" class="btn btn-outline-dark">Get This</button>
-        </form>
-      </div>
-    </div>
+      <%break;
+  default:%>
+
+<%}
+
+    })%>
+
+
+
+
 
   </div>
 

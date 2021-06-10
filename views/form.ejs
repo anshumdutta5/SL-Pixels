@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>SpeEdlabs Marketing</title>
+  <title>SL Pixels</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
 
 <body class="form-body">
@@ -19,7 +19,7 @@
       <img src="/images/logo.png" class="logo container" alt="logo-img">
     </div>
     <div class="col-lg-6">
-      <h2 class="logo-heading">SpeEdlabs Marketing</h2>
+      <h2 class="logo-heading">SL Pixels</h2>
     </div>
     <div class="col-lg-2 logout-button">
       <a href="/logout"><button role="button" class=" btn btn-outline-dark">Logout</button></a>
@@ -27,15 +27,33 @@
   </div>
 
   <div class="container form  ">
-    <form action="/form" method="post" class="form-portion" autocomplete="off">
+    <form action="/form" method="post" class="form-portion" autocomplete="off" enctype="multipart/form-data">
       <div class="form-group form-data">
         <label for="formGroupExampleInput">Key</label>
         <input type="password" class="form-control form-input" name="key">
       </div>
       <div class="form-group form-data">
+        <label for="formGroupExampleInput">Image Source</label>
+        <select class="form-control form-input " style="height:50px" onchange="yesnoCheck(this);">
+          <option selected>select</option>
+          <option value="url">Enter URL</option>
+          <option value="img">Add Image</option>
+        </select>
+      </div>
+
+      <div id="input-img" class="form-group form-data" style="display: none;">
+        <label for="formFileSm" class="form-label">Large file input example</label>
+        <input name="img" class="form-control form-file-input form-control-sm" id="formFileSm" type="file" accept=".jpg,.png" />
+      </div>
+
+      <div id="input-url" class="form-group form-data" style="display: none;">
         <label for="formGroupExampleInput">Image_url</label>
         <input type="text" class="form-control form-input" name="url">
       </div>
+
+
+
+
       <div class="form-group form-data">
         <label for="formGroupExampleInput2">Meeting ID</label>
         <input type="text" class="form-control form-input" name="id">
@@ -48,9 +66,9 @@
     </form>
   </div>
   <% if(flag === 0){ %>
-    <script type="text/javascript">
-      alert("Wrong Key!!");
-    </script>
+  <script type="text/javascript">
+    alert("Wrong Key!!");
+  </script>
   <% } %>
 
   <% if(url === " "){ %>
@@ -64,17 +82,17 @@
         <span> <%= date %></span>
       </div>
       <div style="text-align:center" class="col">
-      <!-- <a href="<%= url %>" Download="img.png" target="_blank">
+        <!-- <a href="<%= url %>" Download="img.png" target="_blank">
         <button type="button" class=" btn btn-outline-dark">Download</button>
       </a> -->
         <img src="<%= url %>" alt="">
-       </div>
+      </div>
     </div>
 
   </div>
   <% } %>
 
-
+  <script src="/js/custom.js" charset="utf-8"></script>
 
 
 </body>
