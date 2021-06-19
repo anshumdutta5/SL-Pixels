@@ -73,8 +73,10 @@ router.post("/",verifyUser,upload.single('img'), function(req, res) {
   var url_user = req.body.url;
   var id = req.body.id;
   var pswd = req.body.password;
-  if(req.file)
-  var path = req.file.path;
+  if(req.file){
+    var path = req.file.path;
+  }
+
   var url;
 
   var preview_type = app.get("preview_type");
